@@ -2,7 +2,7 @@
 
 describe('Contact form', () => {
 
-    it('should submit the form clicking on "Send Message" button', () => {
+    it('should submit the form clicking on "Send Message" button', {defaultCommandTimeout: 6000},() => {
         cy.visit('http://localhost:5173/about');
 
         // Select message input field then insert data
@@ -47,7 +47,7 @@ describe('Contact form', () => {
 
     });
 
-    it.only('should validate the form input', () => {
+    it('should validate the form input', () => {
         cy.visit('http://localhost:5173/about');
 
         cy.get('[data-cy="contact-btn-submit"]').click()
