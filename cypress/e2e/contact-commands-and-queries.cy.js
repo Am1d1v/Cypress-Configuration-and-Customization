@@ -8,6 +8,8 @@ describe('Contact form', () => {
 
     it('should submit the form clicking on "Send Message" button',() => {
 
+        cy.task('seedDatabase');
+
         // Select message input field then insert data
         //cy.get('[data-cy="contact-input-message"]').type('Message Text');
         cy.getById('contact-input-message').type('Message Text');
