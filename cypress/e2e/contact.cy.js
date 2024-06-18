@@ -2,8 +2,12 @@
 
 describe('Contact form', () => {
 
-    it('should submit the form clicking on "Send Message" button', {defaultCommandTimeout: 6000},() => {
-        cy.visit('http://localhost:5173/about');
+    beforeEach(() => {
+        cy.visit('/about');
+    })
+
+    it('should submit the form clicking on "Send Message" button',() => {
+        //cy.visit('/about');
 
         // Select message input field then insert data
         cy.get('[data-cy="contact-input-message"]').type('Message Text');
@@ -28,7 +32,7 @@ describe('Contact form', () => {
     });
 
     it('should submit the form pressing "Enter"', () => {
-        cy.visit('http://localhost:5173/about');
+        //cy.visit('/about');
 
         // Select message input field then insert data
         cy.get('[data-cy="contact-input-message"]').type('Message Text');
@@ -48,7 +52,7 @@ describe('Contact form', () => {
     });
 
     it('should validate the form input', () => {
-        cy.visit('http://localhost:5173/about');
+        //cy.visit('/about');
 
         cy.get('[data-cy="contact-btn-submit"]').click()
         cy.get('[data-cy="contact-btn-submit"]').then((el) => {
