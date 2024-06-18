@@ -9,13 +9,16 @@ describe('Contact form', () => {
     it('should submit the form clicking on "Send Message" button',() => {
 
         // Select message input field then insert data
-        cy.get('[data-cy="contact-input-message"]').type('Message Text');
+        //cy.get('[data-cy="contact-input-message"]').type('Message Text');
+        cy.getById('contact-input-message').type('Message Text');
 
         // Select name input field then insert data
-        cy.get('[data-cy="contact-input-name"]').type('UserName');
+        //cy.get('[data-cy="contact-input-name"]').type('UserName');
+        cy.getById('contact-input-name').type('UserName');
 
         // Select email input field then insert data
-        cy.get('[data-cy="contact-input-email"]').type('UserEmail@gmail.com');
+        //cy.get('[data-cy="contact-input-email"]').type('UserEmail@gmail.com');
+        cy.getById('contact-input-email').type('UserEmail@gmail.com');
 
         // Select submit button then click it
         cy.get('[data-cy="contact-btn-submit"]').contains('Send Message');
